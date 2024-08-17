@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--对应接口-->
+<mapper namespace="com.example.mapper.NoticeMapper">
+    <select id="selectAllNotices1" resultType="com.example.entity.Notice">
+        select notice_id as noticeId,notice_time as noticeTime,notice_content as noticeContent from xm_notice;
+    </select>
+
+    <delete id="deleteById1">
+        delete from xm_notice where notice_id = #{noticeId};
+    </delete>
+
+    <update id="updateNotice1">
+        update xm_notice set notice_time = #{noticeTime},notice_content=#{noticeContent} where notice_id =#{noticeId};
+    </update>
+
+</mapper>
