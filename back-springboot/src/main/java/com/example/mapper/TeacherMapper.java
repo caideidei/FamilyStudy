@@ -1,5 +1,6 @@
 package com.example.mapper;
 
+import com.example.controller.UserController;
 import com.example.entity.Teacher;
 
 import java.util.List;
@@ -12,5 +13,8 @@ public interface TeacherMapper {
     int deleteById1(Integer teacherId);
 
     int updateTeacher1(Teacher teacher);
+
+    //注册插入数据
+    int insertTeacher1(UserController.RegisterRequest registerRequest);
 
 }

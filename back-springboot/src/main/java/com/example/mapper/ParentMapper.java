@@ -1,5 +1,6 @@
 package com.example.mapper;
 
+import com.example.controller.UserController;
 import com.example.entity.Parent;
 
 import java.util.List;
@@ -11,4 +12,6 @@ public interface ParentMapper {
     int deleteById1(Integer parentId);
     // 更新家长信息
     int updateParent1(Parent parent);
+
+    int insertParent1(UserController.RegisterRequest registerRequest);
 }

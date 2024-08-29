@@ -9,4 +9,5 @@ public class User {
     private String userPassword;
     private String userName;
     private String userPicture;
+    private String userRole;
 }

@@ -20,9 +20,23 @@ public class UserController {
     public ResponseEntity<ApiResponse<?>> login(@RequestBody LoginRequest loginRequest) {
         User user = userService.selectByPhone2(loginRequest.getPhoneNumber());
         if (user != null && userService.checkPassword(loginRequest.getPassword(), user.getUserPassword())) {
-            return ResponseEntity.ok(ApiResponse.success("登录成功",user));
+            if (user.getUserRole().equals(loginRequest.getRole())){
+                return ResponseEntity.ok(ApiResponse.success("登录成功",user));
+            }else {
+                return ResponseEntity.status(401).body(ApiResponse.error("角色不匹配"));
+            }
         } else {
-            return ResponseEntity.status(401).body(ApiResponse.error("登录失败"));
+            return ResponseEntity.status(401).body(ApiResponse.error("登录失败,密码错误"));
+        }
+    }
+
+    @PostMapping("/register")
+    public ResponseEntity<ApiResponse<?>> register(@RequestBody RegisterRequest registerRequest) {
+        int success = userService.insertUser2(registerRequest);
+        if (success>0) {
+            return ResponseEntity.ok(ApiResponse.success("注册成功",null));
+        } else {
+            return ResponseEntity.status(400).body(ApiResponse.error("注册失败"));
         }
     }
 
@@ -31,16 +45,17 @@ public class UserController {
     public static class LoginRequest {
         private String phoneNumber;
         private String password;
+        private String role;
     }
 
-//    @GetMapping("/profile")
-//    public ResponseEntity<ApiResponse<?>> getUserProfile(@RequestParam Integer userId) {
-//        User user = userService.selectById2(userId);
-//        if (user != null) {
-//            return ResponseEntity.ok(ApiResponse.success("获取用户信息成功", user));
-//        } else {
-//            return ResponseEntity.status(404).body(ApiResponse.error("未找到用户"));
-//        }
-//    }
+    @Data
+    public static class RegisterRequest {
+        private String name;
+        private String phone;
+//        private String email;
+        private String password;
+        private String role;
+    }
+
 
 }

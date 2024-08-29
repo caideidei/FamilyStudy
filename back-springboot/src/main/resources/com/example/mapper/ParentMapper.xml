@@ -16,4 +16,9 @@
         parent_phone = #{parentPhone}, parent_email = #{parentEmail}
         where parent_id = #{parentId};
     </update>
+
+    <insert id="insertParent1">
+        insert into xm_parent (parent_name, parent_phone,  parent_password, parent_role)
+        VALUES (#{name}, #{phone}, #{password}, #{role})
+    </insert>
 </mapper>

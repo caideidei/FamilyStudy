@@ -7,7 +7,4 @@
     <select id="selectByPhone1" resultType="com.example.entity.User">
         select * from user_view where user_phone=#{userPhone}
     </select>
-<!--    <select id="selectById1" resultType="com.example.entity.User">-->
-<!--        select * from user_view where user_id=#{userId}-->
-<!--    </select>-->
 </mapper>

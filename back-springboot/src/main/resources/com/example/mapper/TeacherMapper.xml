@@ -19,4 +19,11 @@
         where teacher_id=#{teacherId}
     </update>
 
+
+    <insert id="insertTeacher1">
+        INSERT INTO xm_teacher (teacher_name, teacher_phone, teacher_password,teacher_role)
+        VALUES (#{name}, #{phone}, #{password},#{role})
+    </insert>
+
+
 </mapper>
