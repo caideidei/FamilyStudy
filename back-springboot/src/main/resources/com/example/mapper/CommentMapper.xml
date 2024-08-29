@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 对应接口 -->
+<mapper namespace="com.example.mapper.CommentMapper">
+    <select id="selectAllComments1" resultType="com.example.entity.Comment">
+        SELECT * FROM xm_comment;
+    </select>
+
+    <delete id="deleteCommentById1">
+        DELETE FROM xm_comment WHERE comment_id = #{commentId};
+    </delete>
+
+    <update id="updateComment1">
+        UPDATE xm_comment
+        SET comment_parent = #{commentParent},
+        comment_teacher = #{commentTeacher},
+        comment_text = #{commentText},
+        comment_time = #{commentTime}
+        WHERE comment_id = #{commentId};
+    </update>
+</mapper>

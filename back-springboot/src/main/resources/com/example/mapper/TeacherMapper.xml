@@ -6,12 +6,17 @@
 <mapper namespace="com.example.mapper.TeacherMapper">
 
     <select id = "selectAllTeachers1" resultType="com.example.entity.Teacher">
-        SELECT teacher_id as teacherId, teacher_name as teacherName, teacher_phone as teacherPhone
-        FROM xm_teacher
+        SELECT * FROM xm_teacher
     </select>
 
     <delete id="deleteById1">
         delete from xm_teacher where teacher_id =#{teacherId}
     </delete>
+
+    <update id="updateTeacher1">
+        update xm_teacher set teacher_name =#{teacherName},teacher_phone=#{teacherPhone},teacher_subject=#{teacherSubject},
+        teacher_email=#{teacherEmail},teacher_picture=#{teacherPicture}
+        where teacher_id=#{teacherId}
+    </update>
 
 </mapper>

@@ -51,4 +51,19 @@ public class NoticeController {
         }
     }
 
+    @PostMapping("/insert")
+    public ApiResponse<String> insertNotice3(@RequestBody Notice notice){
+        try{
+            int i = noticeService.insertNotice2(notice);
+            if(i>0){
+                return ApiResponse.success("成功添加公告！",null);
+            }else{
+                return ApiResponse.error("添加公告失败1！");
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+            return ApiResponse.error("添加公告失败2！");
+        }
+    }
+
 }

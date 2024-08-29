@@ -11,4 +11,6 @@ public interface NoticeMapper {
     int deleteById1(Integer noticeId);
     //更改信息
     int updateNotice1(Notice notice);
+    //插入信息
+    int insertNotice1(Notice notice);
 }

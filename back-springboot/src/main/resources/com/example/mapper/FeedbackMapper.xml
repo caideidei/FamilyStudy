@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 对应接口 -->
+<mapper namespace="com.example.mapper.FeedbackMapper">
+
+    <select id="selectAllFeedbacks1" resultType="com.example.entity.Feedback">
+        SELECT * FROM xm_feedback;
+    </select>
+
+    <delete id="deleteFeedbackById1">
+        DELETE FROM xm_feedback WHERE feedback_id = #{feedbackId};
+    </delete>
+
+    <update id="updateFeedback1">
+        UPDATE xm_feedback
+        SET feedback_person = #{feedbackPerson},
+        feedback_role = #{feedbackRole},
+        feedback_text = #{feedbackText},
+        feedback_time = #{feedbackTime}
+        WHERE feedback_id = #{feedbackId};
+    </update>
+
+    <insert id="insertFeedback1">
+        INSERT INTO xm_feedback (feedback_id,feedback_person, feedback_role, feedback_text, feedback_time)
+        VALUES (#{feedbackId},#{feedbackPerson}, #{feedbackRole}, #{feedbackText}, #{feedbackTime});
+    </insert>
+</mapper>

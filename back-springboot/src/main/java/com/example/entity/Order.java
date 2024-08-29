@@ -9,8 +9,9 @@ public class Order {
     private String orderParent;
     private String orderSubject;
     private String orderGrade;
-    private String orderNote;
-    private String teacherName;
     private Integer orderMoney;
+    private String orderTime;
+    private String orderNote;
+    private String orderTeacher;
 
 }

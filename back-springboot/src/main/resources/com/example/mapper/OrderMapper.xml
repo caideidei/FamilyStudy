@@ -5,13 +5,16 @@
 <!--对应接口-->
 <mapper namespace="com.example.mapper.OrderMapper">
     <select id="selectAllOrders1" resultType="com.example.entity.Order">
-        select
-        order_id as orderId, order_parent as orderParent, order_subject as orderSubject,
-        order_grade as orderGrade, order_note as orderNote, teacher_name as teacherName,order_money as orderMoney
-        from xm_order
+        select * from xm_order
     </select>
 
     <delete id="deleteById1">
         delete from xm_order where order_id = #{orderId}
     </delete>
+
+    <update id="updateOrder1">
+        update xm_order set order_subject=#{orderSubject},order_grade=#{orderGrade},
+        order_time=#{orderTime},order_money=#{orderMoney},order_note=#{orderNote},order_teacher=#{orderTeacher}
+        where order_id=#{orderId}
+    </update>
 </mapper>

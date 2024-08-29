@@ -6,5 +6,5 @@ import lombok.Data;
 public class Notice {
     private Integer noticeId;
     private String noticeTime;
-    private String noticeContent;
+    private String noticeText;
 }

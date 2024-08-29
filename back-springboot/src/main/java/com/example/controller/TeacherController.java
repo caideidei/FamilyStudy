@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/teachers")
+@RequestMapping("/teacher")
 public class TeacherController {
 
     @Autowired
@@ -35,6 +35,21 @@ public class TeacherController {
         }catch (Exception e){
             e.printStackTrace();
             return ApiResponse.error("删除失败的数据id为："+teacherId);
+        }
+    }
+
+    @PutMapping("/{teacherId}")
+    public ApiResponse<String> updateTeacher3(@PathVariable Integer teacherId,@RequestBody Teacher teacher){
+        try{
+            int i = teacherService.updateTeacher2(teacher);
+            if(i>0){
+                return ApiResponse.success("成功修改id为："+teacherId+"的信息",null);
+            }else{
+                return ApiResponse.error("未找到id为："+teacherId+"的信息");
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+            return ApiResponse.error("修改失败id为："+teacherId+"的信息");
         }
     }
 

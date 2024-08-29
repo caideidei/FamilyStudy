@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.ParentMapper">
+    <select id="selectAllParents1" resultType="com.example.entity.Parent">
+        select * from xm_parent;
+    </select>
+
+    <delete id="deleteById1">
+        delete from xm_parent where parent_id = #{parentId};
+    </delete>
+
+    <update id="updateParent1">
+        update xm_parent set parent_picture = #{parentPicture}, parent_name = #{parentName},
+        parent_phone = #{parentPhone}, parent_email = #{parentEmail}
+        where parent_id = #{parentId};
+    </update>
+</mapper>

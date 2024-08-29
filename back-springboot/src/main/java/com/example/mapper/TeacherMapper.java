@@ -11,4 +11,6 @@ public interface TeacherMapper {
 
     int deleteById1(Integer teacherId);
 
+    int updateTeacher1(Teacher teacher);
+
 }

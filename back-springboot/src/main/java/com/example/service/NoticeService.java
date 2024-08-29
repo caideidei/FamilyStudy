@@ -11,4 +11,6 @@ public interface NoticeService {
 
     int updateNotice2(Notice notice);
 
+    int insertNotice2(Notice notice);
+
 }

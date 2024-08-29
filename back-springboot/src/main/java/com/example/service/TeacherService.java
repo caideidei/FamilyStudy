@@ -10,4 +10,6 @@ public interface TeacherService {
 
     int deleteById2(Integer teacherId);
 
+    int updateTeacher2(Teacher teacher);
+
 }

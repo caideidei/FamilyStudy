@@ -18,13 +18,18 @@ public class TeacherServiceImpl implements TeacherService {
     @Override
     public List<Teacher> selectAllTeachers2() {
         List<Teacher> teachers = teacherMapper.selectAllTeachers1();
-//        System.out.println("service得到数据"+teachers);
         return teachers;
     }
 
     @Override
     public int deleteById2(Integer teacherId) {
         int i = teacherMapper.deleteById1(teacherId);
+        return i;
+    }
+
+    @Override
+    public int updateTeacher2(Teacher teacher) {
+        int i = teacherMapper.updateTeacher1(teacher);
         return i;
     }
 }

@@ -11,4 +11,6 @@ public interface OrderService {
 
     int deleteById2(Integer orderId);
 
+    int updateOrder2(Order order);
+
 }

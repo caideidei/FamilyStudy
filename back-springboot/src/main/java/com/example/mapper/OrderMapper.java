@@ -12,4 +12,6 @@ public interface OrderMapper {
     //根据id删除一行数据
     int deleteById1(Integer orderId);
 
+    int updateOrder1(Order order);
+
 }

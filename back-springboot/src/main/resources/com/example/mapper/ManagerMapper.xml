@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--对应接口-->
+<mapper namespace="com.example.mapper.ManagerMapper">
+    <select id="selectAllManagers1" resultType="com.example.entity.Manager">
+        select * from xm_manager;
+    </select>
+
+    <delete id="deleteManagerById1">
+        delete from xm_manager where manager_id = #{managerId};
+    </delete>
+
+    <update id="updateManager1">
+        update xm_manager set manager_picture=#{managerPicture},manager_name=#{managerName},
+        manager_phone=#{managerPhone},manager_email=#{managerEmail}
+        where manager_id=#{managerId};
+    </update>
+
+</mapper>

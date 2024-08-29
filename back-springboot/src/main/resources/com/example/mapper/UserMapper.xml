@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--对应接口-->
+<mapper namespace="com.example.mapper.UserMapper">
+    <select id="selectByPhone1" resultType="com.example.entity.User">
+        select * from user_view where user_phone=#{userPhone}
+    </select>
+<!--    <select id="selectById1" resultType="com.example.entity.User">-->
+<!--        select * from user_view where user_id=#{userId}-->
+<!--    </select>-->
+</mapper>

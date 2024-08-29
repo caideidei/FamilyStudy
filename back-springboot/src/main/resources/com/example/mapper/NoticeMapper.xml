@@ -5,7 +5,7 @@
 <!--对应接口-->
 <mapper namespace="com.example.mapper.NoticeMapper">
     <select id="selectAllNotices1" resultType="com.example.entity.Notice">
-        select notice_id as noticeId,notice_time as noticeTime,notice_content as noticeContent from xm_notice;
+        select * from xm_notice;
     </select>
 
     <delete id="deleteById1">
@@ -13,7 +13,11 @@
     </delete>
 
     <update id="updateNotice1">
-        update xm_notice set notice_time = #{noticeTime},notice_content=#{noticeContent} where notice_id =#{noticeId};
+        update xm_notice set notice_time = #{noticeTime},notice_text=#{noticeText} where notice_id =#{noticeId};
     </update>
+
+    <insert id="insertNotice1">
+        insert into xm_notice (notice_id,notice_text,notice_time) values (#{noticeId},#{noticeText},#{noticeTime});
+    </insert>
 
 </mapper>

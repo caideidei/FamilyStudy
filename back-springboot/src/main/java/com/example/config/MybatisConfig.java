@@ -5,6 +5,7 @@ import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
 import javax.sql.DataSource;
@@ -19,7 +20,7 @@ public class MybatisConfig {
         sessionFactory.setDataSource(dataSource);
         // 可以通过sessionFactory.setConfigLocation()等方法来配置MyBatis
         // 例如，加载自定义的MyBatis配置文件
-        // sessionFactory.setConfigLocation(new ClassPathResource("mybatis-config.xml"));
+         sessionFactory.setConfigLocation(new ClassPathResource("mybatis-config.xml"));
         // 但在这个例子中，我们直接使用了Spring Boot的自动配置
         return sessionFactory.getObject();
     }

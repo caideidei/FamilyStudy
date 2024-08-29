@@ -39,4 +39,19 @@ public class OrderController {
         }
     }
 
+    @PutMapping("/{orderId}")
+    public ApiResponse<String> updateOrder3(@PathVariable Integer orderId,@RequestBody Order order){
+        try{
+            int i = orderService.updateOrder2(order);
+            if(i>0){
+                return ApiResponse.success("成功修改id为："+orderId+"的信息",null);
+            }else{
+                return ApiResponse.error("未找到id为："+orderId+"的信息");
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+            return ApiResponse.error("修改失败id为："+orderId+"的信息");
+        }
+    }
+
 }
