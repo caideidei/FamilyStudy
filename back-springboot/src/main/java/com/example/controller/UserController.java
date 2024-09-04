@@ -32,6 +32,9 @@ public class UserController {
 
     @PostMapping("/register")
     public ResponseEntity<ApiResponse<?>> register(@RequestBody RegisterRequest registerRequest) {
+        if(userService.checkPhoneRegistered(registerRequest.getPhone())){
+            return ResponseEntity.status(400).body(ApiResponse.error("该手机号已被注册"));
+        }
         int success = userService.insertUser2(registerRequest);
         if (success>0) {
             return ResponseEntity.ok(ApiResponse.success("注册成功",null));

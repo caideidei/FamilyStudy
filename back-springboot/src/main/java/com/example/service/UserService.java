@@ -11,4 +11,6 @@ public interface UserService {
     boolean checkPassword(String rawPassword, String storedPassword);
 
     int insertUser2(UserController.RegisterRequest registerRequest);
+
+    boolean checkPhoneRegistered(String userPhone);
 }

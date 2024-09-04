@@ -48,4 +48,12 @@ public class UserServiceImpl implements UserService {
         return 0;
     }
 
+    @Override
+    public boolean checkPhoneRegistered(String userPhone) {
+        User user = userMapper.selectByPhone1(userPhone);
+        /* if(user){return true;}
+         else{return false;}*/
+        return user != null;
+    }
+
 }
