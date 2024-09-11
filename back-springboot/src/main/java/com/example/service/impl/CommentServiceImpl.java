@@ -3,10 +3,11 @@ package com.example.service.impl;
 import com.example.entity.Comment;
 import com.example.mapper.CommentMapper;
 import com.example.service.CommentService;
+import jakarta.annotation.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
+//import javax.annotation.Resource;
 import java.time.LocalDateTime;
 import java.util.List;
 

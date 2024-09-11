@@ -8,8 +8,8 @@ import com.example.mapper.UserMapper;
 import com.example.service.ParentService;
 import com.example.service.UserService;
 import org.springframework.stereotype.Service;
-
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
+//import javax.annotation.Resource;
 
 @Service
 public class UserServiceImpl implements UserService {

@@ -4,8 +4,8 @@ import com.example.entity.Manager;
 import com.example.mapper.ManagerMapper;
 import com.example.service.ManagerService;
 import org.springframework.stereotype.Service;
-
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
+//import javax.annotation.Resource;
 import java.util.List;
 
 @Service

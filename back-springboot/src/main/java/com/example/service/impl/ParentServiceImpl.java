@@ -5,8 +5,8 @@ import com.example.mapper.ParentMapper;
 import com.example.service.ParentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
+//import javax.annotation.Resource;
 import java.util.List;
 
 @Service
